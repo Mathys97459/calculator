@@ -30,7 +30,7 @@ npm run dev
 Open your browser and navigate to http://localhost:3000 to use the calculator app.
 
 Running Tests :
-npx vitest run
+npx vitest test
 
 End-to-End Tests:
 Make sure the development server is running (npm run dev).

@@ -1,12 +1,21 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 
-const Layout = ({ children }) => {
-  return <div>{children}</div>;
+export const metadata = {
+  title: 'Calculatrice',
+  description: 'Une calculatrice simple en React',
 };
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+const RootLayout = ({ children }) => {
+  return (
+    <html lang="en">
+      <body> 
+        <header>
+          <h1>Bienvenue sur la Calculatrice</h1>
+        </header>
+        <main>{children}</main>
+      </body>
+    </html>
+  );
 };
 
-export default Layout;
+export default RootLayout;
