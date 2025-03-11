@@ -33,5 +33,4 @@ Open your browser and navigate to http://localhost:3000 to use the calculator ap
 npx vitest test
 
 # End-to-End Tests:
-Make sure the development server is running (npm run dev).
 npx playwright test

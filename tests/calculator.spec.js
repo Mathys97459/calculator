@@ -11,3 +11,26 @@ test('should calculate the correct result', async ({ page }) => {
   const result = await page.textContent('h2');
   expect(result).toBe('Result: 5');
 });
+
+
+test('should add element to history and clear the history', async ({ page }) => {
+  await page.goto('http://localhost:3000');
+
+  await page.click('button:has-text("1")');
+  await page.click('button:has-text("2")');
+  await page.click('button:has-text("+")');
+  await page.click('button:has-text("3")');
+  await page.click('button:has-text("=")');
+
+  const historyBeforeClear = await page.textContent('ul');
+  expect(historyBeforeClear).toContain('12+3 = 15');
+
+  await page.click('button:has-text("Clear History")');
+
+  // Vérifier que l'historique est vide
+  const historyAfterClear = await page.textContent('ul');
+  expect(historyAfterClear).toBe(''); 
+  
+  const result = await page.textContent('h2');
+  expect(result).toBe('Result: 15');
+});
