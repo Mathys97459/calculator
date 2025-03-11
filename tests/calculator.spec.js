@@ -1,4 +1,3 @@
-// tests/calculator.spec.js
 import { test, expect } from '@playwright/test';
 
 test('should calculate the correct result', async ({ page }) => {

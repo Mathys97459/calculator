@@ -1,6 +1,5 @@
-// src/calculator.test.js
 import { describe, it, expect } from 'vitest';
-import { calculate } from './calculatorLogic';
+import { calculate } from '../src/calculatorLogic';
 
 describe('calculate function', () => {
   it('should return the correct result for addition', () => {
