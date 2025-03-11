@@ -3,13 +3,15 @@ import { test, expect } from '@playwright/test';
 test('should calculate the correct result', async ({ page }) => {
   await page.goto('http://localhost:3000');
 
-  // Tester l'addition
+  // Remplir l'input avec une opération
   await page.fill('input[type="text"]', '2 + 3');
   await page.click('button:has-text("=")');
-  
-  const result = await page.textContent('h2');
-  expect(result).toBe('Result: 5');
+
+  // Vérifier que l'input affiche bien le résultat
+  const result = await page.inputValue('input[type="text"]');
+  expect(result).toBe('5');
 });
+
 
 
 test('should add element to history and clear the history', async ({ page }) => {
@@ -26,12 +28,11 @@ test('should add element to history and clear the history', async ({ page }) => 
 
   await page.click('button:has-text("Clear History")');
 
-  // Vérifier que l'historique est vide
   const historyAfterClear = await page.textContent('ul');
   expect(historyAfterClear).toBe(''); 
   
-  const result = await page.textContent('h2');
-  expect(result).toBe('Result: 15');
+  const result = await page.inputValue('input[type="text"]');
+  expect(result).toBe('15');
 });
 
 
