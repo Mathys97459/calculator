@@ -1,10 +1,9 @@
-// playwright.config.js
 export default {
-    testDir: './tests',  // Assure-toi que tes tests sont dans ce dossier
-    timeout: 30000,
-    use: {
-      headless: true,  // Pour ne pas afficher le navigateur pendant les tests
-      actionTimeout: 10000,
-    },
-  };
-  
+  testDir: './tests-e2e',
+  timeout: 30000,
+  use: {
+    headless: true,
+    actionTimeout: 10000,
+  },
+  globalSetup: './global-setup.js', // Ajoute un fichier pour isoler les contextes globaux
+};

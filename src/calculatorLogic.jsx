@@ -1,6 +1,7 @@
 export const calculate = (expression) => {
   try {
-    const result = eval(expression);
+    const clearedExpression = expression.replace(/\b0+(\d+)/g, '$1');
+    const result = eval(clearedExpression);
 
     if (!isFinite(result)) {
       return 'Error';

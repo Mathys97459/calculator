@@ -12,10 +12,11 @@ const Calculator = () => {
   };
 
   const handleCalculate = () => {
-    const calcResult = calculate(expression);
+    const clearedExpression = expression.replace(/(?<!\d)0+(\d+)/g, '$1');
+    const calcResult = calculate(clearedExpression);
     setResult(calcResult);
     setHistory([...history, { expression, result: calcResult }]);
-    setExpression('');
+    setExpression(calcResult);
   };
 
   const handleClearHistory = () => {
@@ -45,9 +46,6 @@ const Calculator = () => {
             onChange={handleInputChange}
             className="calculator-input"
           />
-        </div>
-        <div className="result-container">
-          <h2 className="result-title">Result: {result}</h2>
         </div>
         <div className="button-grid">
           <button onClick={() => handleButtonClick('1')} className="calculator-btn">1</button>
