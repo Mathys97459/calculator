@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/global.css';
 
 export const metadata = {
   title: 'Calculatrice',
@@ -9,9 +10,6 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <body> 
-        <header>
-          <h1>Bienvenue sur la Calculatrice</h1>
-        </header>
         <main>{children}</main>
       </body>
     </html>
