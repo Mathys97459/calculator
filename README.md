@@ -14,20 +14,18 @@ This project is a simple calculator application built with React. It features un
 
 To get started with the project, follow these steps:
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/calculator-app.git
-Navigate to the project directory:
+Clone the repository:
+  git clone https://github.com/your-username/calculator-app.git
 
 
 Install the dependencies:
-
-npm install
+  npm install
 
 ## Running the Application:
-npm run dev
+  npm run dev
 
 Open your browser and navigate to http://localhost:3000 to use the calculator app.
+
 
 ## Running Tests:
 
