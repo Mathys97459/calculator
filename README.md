@@ -24,14 +24,16 @@ Install the dependencies:
 
 npm install
 
-Running the Application:
+## Running the Application:
 npm run dev
 
 Open your browser and navigate to http://localhost:3000 to use the calculator app.
 
-Running Tests :
+## Running Tests:
+
+# Unit Tests:
 npx vitest test
 
-End-to-End Tests:
+# End-to-End Tests:
 Make sure the development server is running (npm run dev).
 npx playwright test
